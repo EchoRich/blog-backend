@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function bubbleSort(arr) {
+      if (arr.length < 2) {
+        return
+      }
+      for (let end = arr.length - 1; end > 0; end--) {
+        for (let i = 0; i < end; i++) {
+          if (arr[i] > arr[i + 1]) {
+            let k = arr[i]
+            arr[i] = arr[i + 1]
+            arr[i + 1] = k
+          }
+        }
+      }
+
+      return arr
+
+    }
+
+    function rightSort(arr) {
+      return arr.sort()
+    }
+
+    function generateRandomArray(size, value) {
+      let arr = Array.from({
+        length: parseInt(Math.random() * 10)
+      })
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = Math.floor(Math.random() * 100)
+      }
+      console.log(3333, arr)
+      return arr
+    }
+    let array = generateRandomArray()
+    console.log(1111, bubbleSort(array))
+    console.log(222, rightSort(array))
+  </script>
+
+</body>
+
+</html>
